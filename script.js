@@ -73,8 +73,10 @@ console.log(filteredArr);
 
 // Map the array to change the 'occupation' key to "job" and increment every age by 1
 const updatedArr = arr.map(person => ({
-    ...person,
-    job: person.occupation, // rename occupation to job
+    // ...person,
+    id: person.id,
+    name: person.name,
+    job: person.occupation, // rename occupation to job, order it before age
     age: Number(person.age) + 1, // increment age by 1
     })
 );
