@@ -63,15 +63,18 @@ const arr = [
     { id: "7", name: "Bilbo", occupation: "None", age: "111" }
     ]
 
-// Sort the array by age
+
+// ========= Sort the array by age
 arr.sort((a, b) => Number(a.age) - Number(b.age));
 console.log(arr);
 
-// Filter the array to remove entries with an age greater than 50
+
+// ========= Filter the array to remove entries with an age greater than 50
 const filteredArr = arr.filter((person) => Number(person.age) <= 50);
 console.log(filteredArr);
 
-// Map the array to change the 'occupation' key to "job" and increment every age by 1
+
+// ========= Map the array to change the 'occupation' key to "job" and increment every age by 1
 const updatedArr = arr.map(person => ({
     // ...person,
     id: person.id,
@@ -83,3 +86,16 @@ const updatedArr = arr.map(person => ({
 
 updatedArr.forEach(person => delete person.occupation);
 console.log(updatedArr);
+
+
+// ========= Use the reduce method to calculate the sum of the ages
+const totalAge = arr.reduce((sum, person) => {
+    return sum + Number(person.age);
+}, 0); // Initial sum is 0
+
+console.log(`Sum total age: ${totalAge}`); //Output: 254
+
+
+// ========= Then use the result to calculate average age (continuation of previous exercise)
+const avgAge = totalAge / arr.length;
+console.log(`Average age: ${(avgAge).toFixed(2)}`);
