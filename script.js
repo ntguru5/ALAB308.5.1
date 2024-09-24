@@ -66,3 +66,18 @@ const arr = [
 // Sort the array by age
 arr.sort((a, b) => Number(a.age) - Number(b.age));
 console.log(arr);
+
+// Filter the array to remove entries with an age greater than 50
+const filteredArr = arr.filter((person) => Number(person.age) <= 50);
+console.log(filteredArr);
+
+// Map the array to change the 'occupation' key to "job" and increment every age by 1
+const updatedArr = arr.map(person => ({
+    ...person,
+    job: person.occupation, // rename occupation to job
+    age: Number(person.age) + 1, // increment age by 1
+    })
+);
+
+updatedArr.forEach(person => delete person.occupation);
+console.log(updatedArr);
