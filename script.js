@@ -130,10 +130,15 @@ function incrementAgeCopy(obj) {
 
 const person = { name: "Ken", occupation: "Batman" };
 
-// Example usage
+// Usage example
 const updatedPerson1 = incrementAge(person);
-console.log(updatedPerson1);
+console.log(updatedPerson1);  // Will modify the original object
+// Output: {name: "Ken", occupation: "Batman", age: 1, updated_at: current date}
 
-// Make a copy, increment age of copy and return copy
+// Make a copy, increment the age of the copy, and return the copy
 const updatedPerson2 = incrementAgeCopy(person);
-console.log(updatedPerson2);
+console.log(updatedPerson2);  // The original object is unchanged, only the copy is modified
+// Output: {name: "Ken", occupation: "Batman", age: 2, updated_at: current date}
+
+console.log(person);  // Check the original object after calling incrementAgeCopy
+// Output: {name: "Ken", occupation: "Batman", age: 1, updated_at: previous date}
