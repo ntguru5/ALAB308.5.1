@@ -84,7 +84,7 @@ const updatedArr = arr.map(person => ({
     })
 );
 
-updatedArr.forEach(person => delete person.occupation);
+updatedArr.forEach(person => delete person.occupation); // remove the occupation key
 console.log(updatedArr);
 
 
