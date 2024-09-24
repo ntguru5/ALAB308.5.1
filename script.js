@@ -99,3 +99,31 @@ console.log(`Sum total age: ${totalAge}`); //Output: 254
 // ========= Then use the result to calculate average age (continuation of previous exercise)
 const avgAge = totalAge / arr.length;
 console.log(`Average age: ${(avgAge).toFixed(2)}`);
+
+// PART 3 Thinking Critically
+// Take an object and increment its age field.
+// Take an object, make a copy, and increment the age field of the copy. Return the copy.
+// For each of the functions above,
+// if the object does not yet contain an age field,
+// create one and set it to 0.
+// Also, add (or modify, as appropriate) an updated_at field that stores a Date object with the current time.
+
+function incrementAge(obj) {
+    if (!obj.hasOwnProperty("age")) {
+        obj.age = 0; // if age doesn't exist, set to 0
+    }
+    obj.age++; // increment age by 1
+    obj.updated_at = new Date(); // update "updated_at" with current time
+    return obj;
+}
+
+// Take an object, make a copy, and increment the age field of the copy. Return the copy
+function incrementAgeCopy(obj) {
+    let newObj = {...obj};
+    if (!newObj.hasOwnProperty("age")) {
+        newObj.age = 0;
+    }
+    newObj.age++;
+    newObj.updated_at = new Date();
+    return newObj;
+}
