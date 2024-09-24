@@ -1,3 +1,5 @@
+// PART 1 Thinking Functionally
+
 // ========= Take an array of numbers and return the sum.
 function sumArray(numbers){
     return numbers.reduce((total, current) => total + current, 0);
@@ -42,3 +44,25 @@ function printNumbers(n, current = 1) {
 };
 
 printNumbers(5); // Output 1, 2, 3, 4, 5 on separate lines
+
+// PART 2 Thinking Methodically
+// For the tasks below, use the following data to test your work:
+// [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" }, { id: "48", name: "Barry", occupation: "Runner", age: "25" }, { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" }, { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" }, { id: "7", name: "Bilbo", occupation: "None", age: "111" }]
+// Use callback functions alongside Array methods to accomplish the following:
+
+// Filter the array to remove entries with an age greater than 50.
+// Map the array to change the 'occupation' key to "job" and increment every age by 1.
+// Use the reduce method to calculate the sum of the ages.
+// Then use the result to calculate the average age.
+
+const arr = [
+    { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+    { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+    { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+    { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+    { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+    ]
+
+// Sort the array by age
+arr.sort((a, b) => Number(a.age) - Number(b.age));
+console.log(arr);
