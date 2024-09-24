@@ -127,3 +127,13 @@ function incrementAgeCopy(obj) {
     newObj.updated_at = new Date();
     return newObj;
 }
+
+const person = { name: "Ken", occupation: "Batman" };
+
+// Example usage
+const updatedPerson1 = incrementAge(person);
+console.log(updatedPerson1);
+
+// Make a copy, increment age of copy and return copy
+const updatedPerson2 = incrementAgeCopy(person);
+console.log(updatedPerson2);
